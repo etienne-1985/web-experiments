@@ -1,6 +1,7 @@
-# web-app-template
+# web-experiments
 
-web-app development using `cra-template-pwa-typescript` and `gitpod` for self-deployment 
+using `cra-template-pwa-typescript` and `gitpod` 
 
 ## usage
-automatically deploy environment by prefixing this repo url with `gitpod.io/#`
+
+deploy project automatically by prefixing this repo url with `gitpod.io/#`

@@ -1,11 +1,11 @@
-checkoutLocation: "./web_experiments"
+checkoutLocation: "./web-experiments"
 workspaceLocation: "."
 tasks:
   - name: three-app-launcher
     init: |
         yarn create react-app pwa --template cra-template-pwa-typescript
-        cp -r /workspace/web_experiments/copyme/. /workspace/pwa/
-        mv /workspace/web_experiments/ /workspace/pwa/src/modules/
+        cp -r /workspace/web-experiments/copyme/. /workspace/pwa/
+        mv /workspace/web-experiments/ /workspace/pwa/src/modules/
         cd /workspace/pwa/
         yarn add react-router-dom @types/react-router-dom
     command: |

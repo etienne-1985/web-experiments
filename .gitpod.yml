@@ -4,9 +4,9 @@ tasks:
   - name: three-app-launcher
     init: |
         yarn create react-app pwa --template cra-template-pwa-typescript
-        cp -r /workspace/web_experiments/copyme/. /workspace/web-app-cra/
-        mv /workspace/web_experiments/ /workspace/web-app-cra/src/modules/
-        cd /workspace/web-app-cra/
+        cp -r /workspace/web_experiments/copyme/. /workspace/pwa/
+        mv /workspace/web_experiments/ /workspace/pwa/src/modules/
+        cd /workspace/pwa/
         yarn add react-router-dom @types/react-router-dom
     command: |
       cd /workspace/pwa

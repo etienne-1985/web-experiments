@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/web-experiments/static/css/main.073c9b0a.css",
+    "main.js": "/web-experiments/static/js/main.93f4e502.js",
+    "static/js/377.320977ba.chunk.js": "/web-experiments/static/js/377.320977ba.chunk.js",
+    "service-worker.js": "/web-experiments/service-worker.js",
+    "index.html": "/web-experiments/index.html",
+    "main.073c9b0a.css.map": "/web-experiments/static/css/main.073c9b0a.css.map",
+    "main.93f4e502.js.map": "/web-experiments/static/js/main.93f4e502.js.map",
+    "377.320977ba.chunk.js.map": "/web-experiments/static/js/377.320977ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.93f4e502.js"
+  ]
+}

@@ -1,48 +1,37 @@
 import React from "react";
 import {
     Route,
-    Switch,
     useLocation,
     Link,
-    useRouteMatch
+    Routes,
+    useMatch
 } from "react-router-dom";
 // import { faTrash } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default (props: any) => {
     const { children } = props
-    let { path, url } = useRouteMatch();
-    let location = useLocation();
-
-    // console.log("path: " + path);
-    // console.log("url: " + url);
-
-    let baseUrl = url;//.charAt(url.length - 1) === '#/' ?  : url;
-    console.log(baseUrl);
-    while (baseUrl.charAt(baseUrl.length - 1) === '/' || baseUrl.charAt(baseUrl.length - 1) === '#') baseUrl = baseUrl.slice(0, baseUrl.length - 1);
-    console.log(baseUrl);
 
     return (<>
-        {(path === location.pathname) && <ul>
-            {React.Children.map(children, (child) => (<li>
-                {/* <Link to={`${baseUrl}/${child.type.name}`}>{child.type.name}</Link> */}
-                <Link
-                    to={{
-                        pathname: `${baseUrl}/${child.type.name}/`,
-                        // hash: "#the-hash",
-                        // state: { fromDashboard: true }
-                    }}
-                >{child.type.name}</Link>
-            </li>))}
-        </ul>}
-        <Switch>
-            {React.Children.map(children, (child) => (
-                <Route path={`${baseUrl}/${child.type.name}/`}>
-                    {/* <Route path={`${path}/:topicId`}> */}
-                    {child}
-                </Route>))}
-        </Switch>
+        <Routes>
+            <Route path={"/"} element={<AppLinks elements={children}/>} />
+            {React.Children.map(children, (child) => (<Route path={`${child.type.name}/*`} element={child} />))}
+            {/* <Route path={`${path}/:topicId`}> */}
+        </Routes>
     </>)
+}
+
+const AppLinks = ({elements}) => {
+    console.log(elements);
+    return (
+    <ul>
+        {/* <li>toto</li> */}
+        {React.Children.map(elements, (child) => (<li>
+            <Link
+                to={`${child.type.name}`}
+            >{child.type.name}</Link>
+        </li>))}
+    </ul>)
 }
 
 export const AppChildren = ({ ...props }) => {
@@ -98,7 +87,7 @@ export const AppChildren = ({ ...props }) => {
 export const NavBar = () => {
     let location = useLocation();
     let hash = window.location.hash;
-    return (<div className="NavBar">{location.pathname}{hash}</div>)
+    return (<div className="NavBar" style={{ position: "absolute", color: "antiquewhite"}}>{location.pathname}{hash}</div>)
 }
 
 // WIP: multiselect dropdown (react-select) to select url options

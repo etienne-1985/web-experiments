@@ -1,13 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Modules from "./modules";
 
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter basename={"/"}>
-          <Route path="/" component={Modules} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<Modules />} />
+      </Routes>
     </BrowserRouter>
   );
 }

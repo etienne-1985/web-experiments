@@ -1,15 +1,15 @@
-checkoutLocation: "./module_repo"
+checkoutLocation: "./web_experiments"
 workspaceLocation: "."
 tasks:
   - name: three-app-launcher
     init: |
-        yarn create react-app web-app-cra --template cra-template-pwa-typescript
-        cp -r /workspace/module_repo/copyme/. /workspace/web-app-cra/
-        mv /workspace/module_repo/ /workspace/web-app-cra/src/modules/
+        yarn create react-app pwa --template cra-template-pwa-typescript
+        cp -r /workspace/web_experiments/copyme/. /workspace/web-app-cra/
+        mv /workspace/web_experiments/ /workspace/web-app-cra/src/modules/
         cd /workspace/web-app-cra/
         yarn add react-router-dom @types/react-router-dom
     command: |
-      cd /workspace/web-app-cra
+      cd /workspace/pwa
       yarn run start
 ports:
   - port: 3000

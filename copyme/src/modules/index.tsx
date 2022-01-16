@@ -1,5 +1,5 @@
 import Modules, { NavBar } from "./appRouting";
-import { MyModule } from "./module_repo";
+import { MyModule } from "./web-experiments";
 
 /**
  * Reference modules here 
